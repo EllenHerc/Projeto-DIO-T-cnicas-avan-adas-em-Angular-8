@@ -1,0 +1,22 @@
+footer{
+    background-color: #7b1fa2;
+    color: #ffff;
+    justify-content: space-around;
+}
+
+.content-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+}
+
+.content-div div{
+    display: flex;
+}
+
+.content-div img{
+    width: 35px;
+    height: 35px;
+}
+
+

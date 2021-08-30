@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <span>Filmes Cadastrados</span>
+</mat-toolbar>
+
+<mat-card>
+    <form class="filter-form">
+        <mat-form-field appearance="fill">
+            <mat-label>Pesquise pelo nome do Filme</mat-label>
+            <input matInput minlength="2">
+            <mat-hint align="end">Min 2 characters</mat-hint>
+          </mat-form-field>
+        
+          <mat-form-field appearance="fill">
+            <mat-label>Gênero</mat-label>
+            <mat-select>
+             <!--<mat-option *ngFor="let genero of generos" [value]="genero">{{genero}}</mat-option>-->
+            </mat-select>
+            <mat-hint align="end">Clique aqui para filtrar por gênero</mat-hint>
+          </mat-form-field>
+    </form>
+</mat-card>

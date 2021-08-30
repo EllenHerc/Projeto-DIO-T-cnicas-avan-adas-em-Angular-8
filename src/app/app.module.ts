@@ -6,15 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './shared/material/material.module';
-import { TopoNavComponent } from './shared/components/topo-nav/topo-nav.component';
+import { TopNavComponent } from './shared/components/top-nav/top-nav.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RodapeComponent } from './shared/components/rodape/rodape.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { ListMoviesComponent } from './movie/list-movies/list-movies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopoNavComponent,
-    RodapeComponent
+    TopNavComponent,
+    FooterComponent,
+    ListMoviesComponent
   ],
   imports: [
     HttpClientModule,
