@@ -1,0 +1,49 @@
+<mat-toolbar color="primary">
+    <nav class="nav-button-row">
+        <button mat-button>
+            <mat-icon>movie</mat-icon>
+            <span>
+                Lista de Filmes
+            </span>
+        </button>
+        <button mat-button>
+            <mat-icon>add</mat-icon>
+            <span>
+                Novo Filme
+            </span>
+        </button>
+    </nav>
+
+    <span class="nav-spacer"></span>
+
+    <nav class="nav-button-row">
+        <a mat-button href="https://github.com/EllenHerc/ProjetoDIO-Tecnicas-avancadas-em-Angular8" target="_blank">
+            <!--ICON GITHUB BRANCO-->
+            <mat-icon svgIcon="git" style="filter: invert(1)"></mat-icon>
+            <span>
+                GitHub
+            </span>
+        </a>
+    </nav>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>          
+    
+</mat-toolbar>
+
+<!--OPÇÕES DO MENU NO CANTO DIREIRO-->
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>
+          Conta
+      </span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>
+          Configurações
+      </span>
+    </button>
+  </mat-menu>
+  
