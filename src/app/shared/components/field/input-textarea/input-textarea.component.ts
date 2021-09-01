@@ -3,22 +3,21 @@ import { AbstractControl, FormGroup } from '@angular/forms';
 import { FieldValidationService } from '../field-validation.service';
 
 @Component({
-  selector: 'app-input-text',
-  templateUrl: './input-text.component.html',
-  styleUrls: ['./input-text.component.scss']
+  selector: 'app-input-textarea',
+  templateUrl: './input-textarea.component.html',
+  styleUrls: ['./input-textarea.component.scss']
 })
-export class InputTextComponent implements OnInit {
+export class InputTextAreaComponent implements OnInit {
 
   @Input() title: string;
   @Input() formGroup: FormGroup;
   @Input() controlName: string;
 
-  constructor(validation: FieldValidationService) { }
+  constructor(public validation: FieldValidationService) { }
 
   get formControl(): AbstractControl{
-      return this.formGroup.controls[this.controlName];
+    return this.formGroup.controls[this.controlName];
   }
-
   ngOnInit(): void {
   }
 

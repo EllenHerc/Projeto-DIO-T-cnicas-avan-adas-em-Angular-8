@@ -16,7 +16,7 @@ export class InputNumberComponent implements OnInit {
   @Input() controlName: string;
   @Input() formGroup: FormGroup;
 
-  constructor(validation: FieldValidationService) { }
+  constructor(public validation: FieldValidationService) { }
 
   get formControl(): AbstractControl{
     return this.formGroup.controls[this.controlName];

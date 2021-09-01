@@ -1,1 +1,19 @@
-<p>register-movies works!</p>
+<main class="main-div">
+    <mat-card class="width75 center">
+        <form autocomplete="off" [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="resetForm()">
+            <mat-card-content>
+                <app-input-text title="Título *" controlName="titulo" [formGroup]="cadastro"></app-input-text>
+                <app-input-text title="Link Foto" controlName="urlFoto" [formGroup]="cadastro"></app-input-text>
+                <app-input-date title="Data de Lançamento *" controlName="lancamento" [formGroup]="cadastro"></app-input-date>
+                <app-input-textarea title="Descrição" controlName="descricao" [formGroup]="cadastro"></app-input-textarea>
+                <app-input-number title="Nota IMDb *" controlName="notaIMDb" [step]=0.1 [formGroup]="cadastro"></app-input-number>
+                <app-input-text title="Link IMDb" controlName="linkIMDb" [formGroup]="cadastro"></app-input-text>
+                <app-input-select title="Gênero *" controlName="genero" [options]="generos" [formGroup]="cadastro"></app-input-select>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="accent" type="submit">Salvar</button>
+                <button mat-raised-button color="warn" type="reset">Cancelar</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</main>
