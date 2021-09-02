@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListMoviesComponent } from './movie/list-movies/list-movies.component';
+import { RegisterMoviesComponent } from './movie/register-movies/register-movies.component';
 
 const routes: Routes = [
   {
@@ -7,7 +9,32 @@ const routes: Routes = [
     redirectTo: 'filmes',
     pathMatch: 'full'
   }, 
-  { path: '**', redirectTo: 'filmes' },
+  {
+    path: 'filmes',
+    children: [
+      {
+        path: '',
+        component: ListMoviesComponent
+      },
+      {
+        path: 'cadastro',
+        children: [
+          {
+            path: '',
+            component: RegisterMoviesComponent
+          },
+          {
+            path: ':id',
+            component: RegisterMoviesComponent
+          }
+        ]
+      }
+    ]
+  },
+  { 
+    path: '**', 
+    redirectTo: 'filmes' 
+  },
 ];
 
 @NgModule({

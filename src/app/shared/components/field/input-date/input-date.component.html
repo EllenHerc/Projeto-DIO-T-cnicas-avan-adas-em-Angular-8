@@ -1,9 +1,10 @@
 <div [formGroup] = "formGroup">
-    <mat-form-field appearance="outline" color="accent" class="full-width">
+    <mat-form-field appearance="outline" color="accent" class="full-width"><!--style configs-->
         <mat-label>{{title}}</mat-label>
+        <!--Input type date readonly and auto-open calendar-->
         <input matInput
         readonly
-        [matDatepicker]="picker"
+        [matDatepicker]="picker" 
         [name]="controlName"
         [formControlName]="controlName"
         (click)="picker.open()">

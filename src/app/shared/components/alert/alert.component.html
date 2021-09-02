@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{alert.title}}</h1>
+<div mat-dialog-content>
+  <p>{{alert.description}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button
+          [color]="alert.colorBtnSucess"
+          cdkFocusInitial
+          [mat-dialog-close]="true">
+    {{alert.btnSucess}}
+  </button>
+  <button mat-stroked-button
+          [color]="alert.colorBtnCancel"
+          [mat-dialog-close]="false"
+          *ngIf="alert.btnClose" >
+    {{alert.btnCancel}}
+  </button>
+</div>

@@ -9,29 +9,29 @@ import { DemoMaterialModule } from './shared/material/material.module';
 import { TopNavComponent } from './shared/components/top-nav/top-nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { ListMoviesComponent } from './movie/list-movies/list-movies.component';
-import { RegisterMoviesComponent } from './movie/register-movies/register-movies.component';
-import { FieldModule } from './shared/components/field/field.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './shared/components/alert/alert.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { MoviesModule } from './movie/movies.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
     FooterComponent,
-    ListMoviesComponent,
-    RegisterMoviesComponent
+    AlertComponent
   ],
   imports: [
-    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    LayoutModule,
     DemoMaterialModule,
-    ReactiveFormsModule,
-    FieldModule
+    AppRoutingModule,
+    MoviesModule
   ],
-  providers: [],
+  entryComponents: [AlertComponent],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

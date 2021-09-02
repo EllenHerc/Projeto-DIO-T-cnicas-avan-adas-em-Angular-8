@@ -32,4 +32,4 @@ import { DemoMaterialModule } from '../../material/material.module';
     FormsModule
   ]
 })
-export class FieldModule { }
+export class FieldsModule { }

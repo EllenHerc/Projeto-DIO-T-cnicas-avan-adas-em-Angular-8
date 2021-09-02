@@ -1,12 +1,14 @@
-<mat-toolbar color="primary">
+<div class="top-nav">
+
+<mat-toolbar color="primary" >
     <nav class="nav-button-row">
-        <button mat-button>
+        <button mat-button [routerLink]="['/filmes']">
             <mat-icon>movie</mat-icon>
             <span>
                 Lista de Filmes
             </span>
         </button>
-        <button mat-button>
+        <button mat-button [routerLink]="['/filmes/cadastro']">
             <mat-icon>add</mat-icon>
             <span>
                 Novo Filme
@@ -30,6 +32,7 @@
     </button>          
     
 </mat-toolbar>
+</div>
 
 <!--OPÇÕES DO MENU NO CANTO DIREIRO-->
 <mat-menu #menu="matMenu">

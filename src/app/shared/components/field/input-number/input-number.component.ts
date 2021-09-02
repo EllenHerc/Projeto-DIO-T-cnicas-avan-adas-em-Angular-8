@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { FieldValidationService } from '../field-validation.service';
+import { FieldsValidationService } from '../fields-validation.service';
 
 @Component({
   selector: 'app-input-number',
@@ -16,7 +16,7 @@ export class InputNumberComponent implements OnInit {
   @Input() controlName: string;
   @Input() formGroup: FormGroup;
 
-  constructor(public validation: FieldValidationService) { }
+  constructor(public validation: FieldsValidationService) { }
 
   get formControl(): AbstractControl{
     return this.formGroup.controls[this.controlName];

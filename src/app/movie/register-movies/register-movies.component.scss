@@ -1,8 +1,17 @@
+@use '~@angular/material' as mat;
+
 .main-div{
     background-color: #424242;
+    flex-direction: column;
 }
-
+mat-toolbar{
+    font-weight: 300;
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    padding: 1vw 3vw;
+}
 mat-card{
+    @include mat.elevation(8);
+    position: relative;
     background-color: #555555;
 }
 
