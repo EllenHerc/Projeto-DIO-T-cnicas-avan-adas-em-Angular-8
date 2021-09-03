@@ -1,7 +1,9 @@
-<main class="main-div">
+<header>
     <mat-toolbar color="primary">
         <span>Cadastro de Filmes</span>
     </mat-toolbar>
+</header>
+<main class="main-div">
     <mat-card class="width75 center">
         <form autocomplete="off" novalidate [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="resetForm()">
             <mat-card-content>

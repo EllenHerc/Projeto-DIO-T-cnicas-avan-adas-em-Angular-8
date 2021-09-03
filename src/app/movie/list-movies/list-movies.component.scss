@@ -5,5 +5,46 @@ mat-toolbar{
 }
 .main-div{
     background-color: #424242;
+    flex-wrap: wrap;
+    justify-content: space-around space-between;
+    min-height: 100%;
+}
+
+.movie-card{
+    margin: 1vw;
+    display: flex;
     flex-direction: column;
+    width: 182px;
+}
+
+.titleMovie{
+    height: 40px;
+}
+
+.movie-card > img{
+    width: 182px;
+    height: 268px;
+    display: block;
+}
+
+.link_button{
+    float: right;
+}
+
+mat-card-actions{
+    display: flex;
+    flex-direction: column;
+}
+
+p > mat-icon{
+    color: yellow;
+}
+
+.infos{
+    color: white;
+    padding: 1vw;
+
+    .titleMovie{
+        text-align: center;
+    }
 }
