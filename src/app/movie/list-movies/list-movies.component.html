@@ -1,47 +1,48 @@
 <header>
   <mat-toolbar color="primary">
     <span>Filmes Cadastrados</span>
+    
   </mat-toolbar>
 </header>
-<main class="main-div" (scrolled)="onScroll()" infiniteScroll>
 
-    <!--<mat-card class="width75 center">
-      <form class="filter-form" novalidate [formGroup]="filtro">
-        <mat-card-content>
-            <app-input-text title="Título do Filme" controlName="title" [formGroup]="filtro"></app-input-text>
-            <app-input-select title="Gênero" controlName="genro" [formGroup]="filtro"></app-input-select>
-        </mat-card-content>
-      </form>
-    </mat-card>-->
+<main class="main-div" infiniteScroll (scrolled)="onScroll()" >
 
-    <mat-card class="movie-card" *ngFor="let filme of filmes">
-      <mat-card-content>
-        <img mat-card-image [src]="filme?.urlImg" alt="Poster do filme">
-          <p>
-            <mat-icon>star</mat-icon>
-            {{filme?.IMDbRating}}
-          </p>
-          <p class="titleMovie">{{filme?.title}}</p>
+  <mat-card class="width100" >
+    <form autocomplete="off" novalidate [formGroup]="filtro">
+      <mat-card-content class="filter-form">
+          <app-input-text class="width40" controlName="text" title="Pesquise aqui" [formGroup]="filtro"></app-input-text>
+          <app-input-select class="width40" controlName="genre" title="Gênero" [options]="generos" [formGroup]="filtro"></app-input-select>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-stroked-button style="color: rgb(64, 163, 230)">ABRIR</button>
-        <div>
-          <button class="info_button" mat-icon-button aria-label="Descrição"  [matMenuTriggerFor]="infos">
-            <mat-icon>info</mat-icon>
-          </button>
-          <a class="link_button" mat-icon-button aria-label="Link do filme no IMDb" [href]="filme?.urlIMDb" target="_blank">
-            <mat-icon>open_in_new</mat-icon>
-          </a>
-        </div>
-      </mat-card-actions>
-      <mat-menu #infos="matMenu" >
-        <div class="infos">
-          <p class="titleMovie">{{filme.title}}</p>
-          <p>Data de Lançamento: {{filme?.releaseDate}}</p>
-          <p>Gênero: {{filme?.genre}}</p>
-        </div>
-      </mat-menu>
-    </mat-card>
+    </form>
+  </mat-card>
+    
+  <mat-card class="movie-card" *ngFor="let filme of filmes">
+    <mat-card-content>
+      <img mat-card-image [src]="filme.urlImg" alt="Poster do filme">
+        <p>
+          <mat-icon>star</mat-icon>
+          {{filme?.IMDbRating}}
+        </p>
+        <p class="titleMovie">{{filme?.title}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button style="color: rgb(64, 163, 230)">ABRIR</button>
+      <div>
+        <button class="info_button" mat-icon-button aria-label="Descrição"  [matMenuTriggerFor]="infos">
+          <mat-icon>info</mat-icon>
+        </button>
+        <a class="link_button" mat-icon-button aria-label="Link do filme no IMDb" [href]="filme?.urlIMDb" target="_blank">
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+      </div>
+    </mat-card-actions>
+    <mat-menu #infos="matMenu" >
+      <div class="infos">
+        <p class="titleMovie">{{filme?.title}}</p>
+        <p>Data de Lançamento: {{filme?.releaseDate}}</p>
+        <p>Gênero: {{filme?.genre}}</p>
+      </div>
+    </mat-menu>
+  </mat-card>
   
-
 </main>

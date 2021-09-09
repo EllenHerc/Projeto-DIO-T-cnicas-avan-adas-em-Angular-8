@@ -6,12 +6,13 @@ mat-toolbar{
 .main-div{
     background-color: #424242;
     flex-wrap: wrap;
-    justify-content: space-around space-between;
+    justify-content: space-around space-between center;
     min-height: 100%;
+    padding: 1vw;
 }
 
 .movie-card{
-    margin: 1vw;
+    margin: 1vw auto;
     display: flex;
     flex-direction: column;
     width: 182px;
@@ -37,7 +38,7 @@ mat-card-actions{
 }
 
 p > mat-icon{
-    color: yellow;
+    color: gold;
 }
 
 .infos{
@@ -47,4 +48,20 @@ p > mat-icon{
     .titleMovie{
         text-align: center;
     }
+}
+
+.filter-form{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -15px;    
+}
+
+.width100{
+    border-radius: 0%;
+    
+}
+
+.width40{
+    width: 100%;
+    padding: 10px;
 }
