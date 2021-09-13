@@ -1,8 +1,9 @@
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { __param } from "tslib";
+import { ConfigParams } from "../shared/models/config-params";
 import { Movie } from "../shared/models/movie";
+import { ConfigParamsService } from "./config-params.service";
 
 
 const url = "http://localhost:3000/filmes/";
@@ -18,29 +19,10 @@ export class MoviesService{
         return this.httpClient.post<Movie>(url, filme);
       }
 
-    listar(pagina: number, qtdPagina: number, texto?: string, genero?: string): Observable<Movie[]> {
+    listar(config: ConfigParams): Observable<Movie[]> {
 
-        if(texto && genero){
-            return this.httpClient.get<Movie[]>(url, {params: { ['_page']: pagina.toString(), 
-                                                                ['_limit']: qtdPagina.toString(),                                                           
-                                                                ['q']: texto,
-                                                                ['genre']: genero } } );
-        }
-
-        else if(texto){
-            return this.httpClient.get<Movie[]>(url, {params: { ['_page']: pagina.toString(), 
-                                                                ['_limit']: qtdPagina.toString(),                                                           
-                                                                ['q']: texto } } );
-        }
-        else if(genero){
-            return this.httpClient.get<Movie[]>(url, {params: { ['_page']: pagina.toString(), 
-                                                                ['_limit']: qtdPagina.toString(),                                                                                                                   
-                                                                ['genre']: genero } } );
-        }
-        else{
-            return this.httpClient.get<Movie[]>(url, {params: { ['_page']: pagina.toString(), 
-                                                                ['_limit']: qtdPagina.toString()} } );
-        }
+        let configP = new ConfigParamsService();
+        return this.httpClient.get<Movie[]>(url, {params: configP.configParams(config)});
         
     }
     

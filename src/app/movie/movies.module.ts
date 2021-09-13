@@ -11,7 +11,7 @@ import { RegisterMoviesComponent } from "./register-movies/register-movies.compo
     declarations: [
         RegisterMoviesComponent,
         ListMoviesComponent
-    ],
+        ],
     imports: [
         CommonModule,
         DemoMaterialModule,

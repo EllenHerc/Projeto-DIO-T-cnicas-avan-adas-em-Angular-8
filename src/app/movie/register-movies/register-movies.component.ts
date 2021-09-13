@@ -51,9 +51,6 @@ export class RegisterMoviesComponent implements OnInit {
   }
 
   private salvarFilme(filme: Movie): void{
-    if(filme.urlImg == ''){
-      filme.urlImg = '../../assets/images/filme.PNG';
-    }
     this.filmesService.salvar(filme).subscribe( () => {
       const config = {
         data: {

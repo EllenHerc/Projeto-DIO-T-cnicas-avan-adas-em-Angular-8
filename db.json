@@ -179,6 +179,26 @@
       "urlIMDb": "",
       "genre": "Ficção cientifica",
       "id": 18
+    },
+    {
+      "title": "GGGGG",
+      "urlImg": "../../assets/images/filme.PNG",
+      "releaseDate": "2021-09-15T03:00:00.000Z",
+      "description": "",
+      "IMDbRating": 4,
+      "urlIMDb": "",
+      "genre": "Terror",
+      "id": 19
+    },
+    {
+      "title": "fhfh",
+      "urlImg": "",
+      "releaseDate": "2021-09-03T03:00:00.000Z",
+      "description": "dsgs",
+      "IMDbRating": 3,
+      "urlIMDb": "",
+      "genre": "Ficção cientifica",
+      "id": 20
     }
   ]
 }
