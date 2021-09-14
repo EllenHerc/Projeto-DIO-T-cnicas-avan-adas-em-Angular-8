@@ -29,12 +29,12 @@
           <p class="titleMovie">{{filme.title}}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-stroked-button style="color: rgb(64, 163, 230)" (click)="abrir(filme.id)">ABRIR</button>
+        <button mat-stroked-button style="color: rgb(64, 163, 230)" (click)="abrir(filme)">ABRIR</button>
         <div>
           <button class="info_button" mat-icon-button aria-label="Informações"  [matMenuTriggerFor]="infos">
             <mat-icon>info</mat-icon>
           </button>
-          <a class="link_button" mat-icon-button aria-label="Link do filme no IMDb" [href]="filme?.urlIMDb" target="_blank">
+          <a *ngIf="filme.urlIMDb" class="link_button" mat-icon-button aria-label="Link do filme no IMDb" [href]="filme?.urlIMDb" target="_blank">
             <mat-icon>open_in_new</mat-icon>
           </a>
         </div>

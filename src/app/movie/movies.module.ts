@@ -6,11 +6,13 @@ import { FieldsModule } from "../shared/components/field/fields.module";
 import { DemoMaterialModule } from "../shared/material/material.module";
 import { ListMoviesComponent } from "./list-movies/list-movies.component";
 import { RegisterMoviesComponent } from "./register-movies/register-movies.component";
+import { ViewMovieComponent } from './view-movie/view-movie.component';
 
 @NgModule({
     declarations: [
         RegisterMoviesComponent,
-        ListMoviesComponent
+        ListMoviesComponent,
+        ViewMovieComponent
         ],
     imports: [
         CommonModule,
@@ -24,5 +26,6 @@ import { RegisterMoviesComponent } from "./register-movies/register-movies.compo
         RegisterMoviesComponent,
         ListMoviesComponent
     ]
+    
 })
 export class MoviesModule{}

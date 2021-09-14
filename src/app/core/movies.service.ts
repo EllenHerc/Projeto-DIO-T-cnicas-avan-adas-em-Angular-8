@@ -25,5 +25,9 @@ export class MoviesService{
         return this.httpClient.get<Movie[]>(url, {params: configP.configParams(config)});
         
     }
+
+    excluir(id: number): Observable<void>{
+        return this.httpClient.delete<void>(url + id);
+    }
     
 }

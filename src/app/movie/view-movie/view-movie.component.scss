@@ -1,0 +1,25 @@
+.poster > img{
+    width: 182px;
+    height: 268px;
+    padding: 0vh 2vh 0vh 2vh;
+}
+
+.main{
+    display: flex;
+    max-width: 50vw;
+    max-height: 100vh;
+    align-self: start;
+    flex-wrap: wrap;
+}
+
+.metaData{
+    align-self: end;
+}
+
+.metaData > p > mat-icon{
+    color: gold;
+}
+
+.descricao{
+    padding-top: 2vh;
+}

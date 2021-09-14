@@ -4,6 +4,8 @@ import { ConfigParams } from 'src/app/shared/models/config-params';
 import { MoviesService } from 'src/app/core/movies.service';
 import { Movie } from 'src/app/shared/models/movie';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ViewMovieComponent } from '../view-movie/view-movie.component';
 
 @Component({
   selector: 'app-list-movies',
@@ -32,7 +34,8 @@ export class ListMoviesComponent implements OnInit {
 
   constructor(private serviceFilmes: MoviesService, 
               private fb: FormBuilder,
-              private router: Router) { }
+              private router: Router,
+              public dialog: MatDialog) { }
   
 
   ngOnInit(): void {
@@ -76,7 +79,16 @@ export class ListMoviesComponent implements OnInit {
     this.listarFilmes();
   }
 
-  private abrir(id: number): void{
+   abrir(filme: Movie): void{
+     console.log(filme);
+    const dialogRef = this.dialog.open(ViewMovieComponent, {
+      data: {filme: filme} as any
+    });
+    dialogRef.beforeClosed().subscribe((retorno: string) =>{
+      if(retorno === 'reload'){
+        window.location.reload();
+      }
+    })
     
   }
 }

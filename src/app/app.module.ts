@@ -13,6 +13,7 @@ import { AlertComponent } from './shared/components/alert/alert.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MoviesModule } from './movie/movies.module';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ViewMovieComponent } from './movie/view-movie/view-movie.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     AppRoutingModule,
     MoviesModule
   ],
-  entryComponents: [AlertComponent],
+  entryComponents: [AlertComponent,ViewMovieComponent],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt' }],
   bootstrap: [AppComponent]
 })
