@@ -1,6 +1,6 @@
 
 <mat-dialog-actions align="end">
-    <button mat-icon-button color="warn" aria-label="Botão fechar" mat-dialog-close cdkFocusInitial>
+    <button mat-button style="background: transparent;" color="warn" aria-label="Botão fechar" mat-dialog-close cdkFocusInitial>
         <mat-icon>close</mat-icon>
     </button>
 </mat-dialog-actions>
@@ -15,7 +15,7 @@
                 <mat-icon>star</mat-icon>
                 {{filme.IMDbRating}}
             </p>
-            <p>Data de lançamento: {{filme.releaseDate}}</p>
+            <p>Data de lançamento: {{filme.releaseDate | date: 'dd/MM/yyyy'}}</p>
             <p>Gênero: {{filme.genre}}</p>
             <a *ngIf="filme.urlIMDb" mat-icon-button aria-label="Link do filme no IMDb" [href]="filme?.urlIMDb" target="_blank">
                 <mat-icon>open_in_new</mat-icon>
@@ -29,10 +29,10 @@
     </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-raised-button color="accent" aria-label="Botão Editar" (click)="editar(filme.id)"> 
+    <button mat-button color="accent" aria-label="Botão Editar" (click)="editar(filme.id)"> 
         <mat-icon>edit</mat-icon>
         Editar</button>
-    <button mat-raised-button color="warn" aria-label="Botão Excluir" (click)="excluir(filme.id)">
+    <button mat-button color="warn" aria-label="Botão Excluir" (click)="excluir(filme.id)">
         <mat-icon>delete</mat-icon>
         Excluir</button>
     

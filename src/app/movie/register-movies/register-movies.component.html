@@ -4,8 +4,8 @@
     </mat-toolbar>
 </header>
 <main class="main-div">
-    <mat-card class="width75 center">
-        <form autocomplete="off" novalidate [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="resetForm()">
+    <mat-card class="width75 center" *ngIf="cadastro">
+        <form autocomplete="off" novalidate  [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="resetForm()">
             <mat-card-content>
                 <app-input-text title="Título *" controlName="title" [formGroup]="cadastro"></app-input-text>
                 <app-input-text title="Link Foto" controlName="urlImg" [formGroup]="cadastro"></app-input-text>

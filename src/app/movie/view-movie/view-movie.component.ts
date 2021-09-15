@@ -49,6 +49,8 @@ export class ViewMovieComponent implements OnInit {
     })
   }
 
-  editar(id: number): void{}
+  editar(id: number): void{
+    this.dialogRef.close(id); 
+  }
 
 }

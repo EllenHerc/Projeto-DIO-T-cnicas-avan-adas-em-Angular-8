@@ -80,13 +80,15 @@ export class ListMoviesComponent implements OnInit {
   }
 
    abrir(filme: Movie): void{
-     console.log(filme);
     const dialogRef = this.dialog.open(ViewMovieComponent, {
       data: {filme: filme} as any
     });
-    dialogRef.beforeClosed().subscribe((retorno: string) =>{
+    dialogRef.beforeClosed().subscribe((retorno: any) =>{
       if(retorno === 'reload'){
         window.location.reload();
+      }
+      else if(!isNaN(retorno) && retorno != ''){
+        this.router.navigateByUrl('filmes/cadastro/' + retorno);
       }
     })
     

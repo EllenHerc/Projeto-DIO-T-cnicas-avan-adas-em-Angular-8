@@ -49,7 +49,7 @@
               <mat-card-subtitle *ngIf="filme.description">Descrição: </mat-card-subtitle>
               <p>{{filme.description}}</p>
             </mat-card-content>
-            <mat-card-subtitle>Data de Lançamento: {{filme.releaseDate}}</mat-card-subtitle>
+            <mat-card-subtitle>Data de Lançamento: {{filme.releaseDate | date: 'dd/MM/yyyy'}}</mat-card-subtitle>
             <mat-card-subtitle>Gênero: {{filme.genre}}</mat-card-subtitle>
           </mat-card>
         </div>
