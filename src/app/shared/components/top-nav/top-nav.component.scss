@@ -3,9 +3,38 @@
 .top-nav{
     @include mat.elevation(8);
     position: relative;
+    z-index: 2;
 }
 
-.nav-button-row{
+
+
+.sideNav{
+    min-height: auto;
+    min-width: 20vw;
+}
+
+.option-sideNav{
+    width: auto;
+    padding: 1vw 2vw 1vw 2vw;
+    margin: 1vw;
+}
+
+.options-sideNav{
+    width: auto;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-divider{
+    margin-top: 2vw;
+}
+
+.button-sideNav{
+    display: none;
+}
+
+.nav-buttons-row{
     display: flex;
 }
 
@@ -23,4 +52,15 @@ button:hover{
 a:hover{
     color: #69F0AE;
     background: rgba(0,0,0,.4);
+}
+
+@media screen and (max-width:500px) {
+
+    .button-sideNav{
+        display: block;
+    }
+
+    .nav-buttons-row{
+        display: none;
+    }
 }

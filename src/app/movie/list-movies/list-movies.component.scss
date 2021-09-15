@@ -52,13 +52,15 @@ p > mat-icon{
 .filter-form{
     display: flex;
     justify-content: space-between;
-    margin-bottom: -15px;    
+    margin-bottom: -15px;   
+     
 }
 
 .width100{
     border-radius: 0%;
-    height: 120px;
+    min-height: 120px;
     align-self: start;
+    
 }
 
 .width40{
@@ -70,4 +72,10 @@ p > mat-icon{
     color: white;
     margin: 0 auto;
     align-self: start;
+}
+
+@media screen and (max-width:500px) {
+    .filter-form{
+        flex-wrap: wrap;
+    }
 }

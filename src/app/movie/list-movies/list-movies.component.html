@@ -13,7 +13,7 @@
           <app-input-text class="width40" controlName="text" title="Pesquise aqui" [formGroup]="filtro"></app-input-text>
           <app-input-select class="width40" controlName="genre" title="Gênero" [options]="generos" [formGroup]="filtro"></app-input-select>
       </mat-card-content>
-     <mat-card-subtitle> <a href="http://">Limpar filtros</a></mat-card-subtitle>
+     <mat-card-subtitle> <a mat-button style="color: rgb(64, 163, 230);" (click)="this.filtro.reset()">Limpar filtros</a></mat-card-subtitle>
     </form>
   </mat-card>
 

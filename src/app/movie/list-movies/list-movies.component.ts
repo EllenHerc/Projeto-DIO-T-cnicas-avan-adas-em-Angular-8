@@ -63,6 +63,7 @@ export class ListMoviesComponent implements OnInit {
     
   }
 
+
   private resetarConsulta(): void{
     this.config.pagina = 0;
     this.filmes = [];
@@ -89,6 +90,7 @@ export class ListMoviesComponent implements OnInit {
       }
       else if(!isNaN(retorno) && retorno != ''){
         this.router.navigateByUrl('filmes/cadastro/' + retorno);
+        
       }
     })
     

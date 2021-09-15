@@ -5,9 +5,9 @@
 </header>
 <main class="main-div">
     <mat-card class="width75 center" *ngIf="cadastro">
-        <form autocomplete="off" novalidate  [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="resetForm()">
+        <form autocomplete="off" novalidate  [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="resetForm()" cdkTrapFocus [cdkTrapFocusAutoCapture]="true">
             <mat-card-content>
-                <app-input-text title="Título *" controlName="title" [formGroup]="cadastro"></app-input-text>
+                <app-input-text title="Título *" controlName="title" [formGroup]="cadastro" ></app-input-text>
                 <app-input-text title="Link Foto" controlName="urlImg" [formGroup]="cadastro"></app-input-text>
                 <app-input-date title="Data de Lançamento *" controlName="releaseDate" [formGroup]="cadastro"></app-input-date>
                 <app-input-textarea title="Descrição" controlName="description" [formGroup]="cadastro"></app-input-textarea>

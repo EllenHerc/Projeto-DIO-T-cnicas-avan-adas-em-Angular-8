@@ -1,7 +1,17 @@
 <div class="top-nav">
 
 <mat-toolbar color="primary" >
-    <nav class="nav-button-row">
+    <div class="button-sideNav">
+        <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened">
+                menu
+            </mat-icon>
+            <mat-icon *ngIf="sidenav.opened">
+                close
+            </mat-icon>
+        </button>
+    </div>
+    <nav class="nav-buttons-row">
         <button mat-button [routerLink]="['/filmes']">
             <mat-icon>movie</mat-icon>
             <span>
@@ -18,7 +28,7 @@
 
     <span class="nav-spacer"></span>
 
-    <nav class="nav-button-row">
+    <nav class="nav-buttons-row">
         <a mat-button href="https://github.com/EllenHerc/ProjetoDIO-Tecnicas-avancadas-em-Angular8" target="_blank">
             <!--ICON GITHUB BRANCO-->
             <mat-icon svgIcon="git" style="filter: invert(1)"></mat-icon>
@@ -33,6 +43,40 @@
     
 </mat-toolbar>
 </div>
+
+<mat-sidenav-container class="sideNav">
+    <mat-sidenav #sidenav >
+         <div class="options-sideNav"> 
+            <button class="option-sideNav" mat-button [routerLink]="['/filmes']" (click)="sidenav.toggle()">
+                <mat-icon>movie</mat-icon>
+                <span>
+                    Lista de Filmes
+                </span>
+            </button>
+
+            <button class="option-sideNav" mat-button [routerLink]="['/filmes/cadastro']" (click)="sidenav.toggle()">
+                <mat-icon>add</mat-icon>
+                <span>
+                    Novo Filme
+                </span>
+            </button>
+
+            <mat-divider></mat-divider>
+
+            <a class="option-sideNav" mat-button href="https://github.com/EllenHerc/ProjetoDIO-Tecnicas-avancadas-em-Angular8" target="_blank" (click)="sidenav.toggle()">
+                <!--ICON GITHUB BRANCO-->
+                <mat-icon svgIcon="git" style="filter: invert(1)"></mat-icon>
+                <span>
+                    GitHub
+                </span>
+            </a>
+        </div>  
+    </mat-sidenav>
+
+    <router-outlet></router-outlet>
+    
+</mat-sidenav-container>
+
 
 <!--OPÇÕES DO MENU NO CANTO DIREIRO-->
 <mat-menu #menu="matMenu">

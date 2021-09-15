@@ -9,6 +9,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class TopNavComponent implements OnInit {
 
+  opened: boolean;
+
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) { 
     iconRegistry.addSvgIcon('git', sanitizer.bypassSecurityTrustResourceUrl('../../../assets/images/git_icon.svg'));
   }
